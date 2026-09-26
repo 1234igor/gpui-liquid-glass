@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    # GPUI renders through Metal, so this only builds and tests on macOS.
+    # Anything that needs a window stays a local command.
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: gpui
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: gpui
+
+      - name: Build
+        run: cargo build --release
+
+      - name: Test
+        run: cargo test --release

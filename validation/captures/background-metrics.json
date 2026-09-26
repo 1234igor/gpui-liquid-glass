@@ -1,0 +1,769 @@
+{
+  "reference": "SwiftUI Glass in Xcode 27 beta on macOS 27.0",
+  "capture_size_points": [
+    1200,
+    800
+  ],
+  "matrix": {
+    "harbour": {
+      "regular": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 1.0475,
+          "rms_0_255": 5.5967,
+          "similarity_percent": 99.5892
+        },
+        "glass_crop": {
+          "mae_0_255": 11.9192,
+          "rms_0_255": 18.7659,
+          "similarity_percent": 95.3258
+        },
+        "material_interior": {
+          "mae_0_255": 24.0037,
+          "rms_0_255": 25.5992,
+          "similarity_percent": 90.5868
+        },
+        "control_bounds": {
+          "mae_0_255": 19.479,
+          "rms_0_255": 25.074,
+          "similarity_percent": 92.3612
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 0.7646
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "clear": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.9438,
+          "rms_0_255": 7.1881,
+          "similarity_percent": 99.6299
+        },
+        "glass_crop": {
+          "mae_0_255": 10.7049,
+          "rms_0_255": 24.297,
+          "similarity_percent": 95.802
+        },
+        "material_interior": {
+          "mae_0_255": 9.3102,
+          "rms_0_255": 17.2833,
+          "similarity_percent": 96.3489
+        },
+        "control_bounds": {
+          "mae_0_255": 17.0805,
+          "rms_0_255": 32.5647,
+          "similarity_percent": 93.3018
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 4.0317
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "regular-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.8055,
+          "rms_0_255": 5.4208,
+          "similarity_percent": 99.6841
+        },
+        "glass_crop": {
+          "mae_0_255": 9.0863,
+          "rms_0_255": 18.1512,
+          "similarity_percent": 96.4367
+        },
+        "material_interior": {
+          "mae_0_255": 15.9387,
+          "rms_0_255": 19.0415,
+          "similarity_percent": 93.7495
+        },
+        "control_bounds": {
+          "mae_0_255": 13.9683,
+          "rms_0_255": 23.1532,
+          "similarity_percent": 94.5222
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 1.9872
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "clear-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 1.0684,
+          "rms_0_255": 6.6526,
+          "similarity_percent": 99.581
+        },
+        "glass_crop": {
+          "mae_0_255": 12.1638,
+          "rms_0_255": 22.4405,
+          "similarity_percent": 95.2299
+        },
+        "material_interior": {
+          "mae_0_255": 21.879,
+          "rms_0_255": 27.3771,
+          "similarity_percent": 91.42
+        },
+        "control_bounds": {
+          "mae_0_255": 19.4055,
+          "rms_0_255": 29.1982,
+          "similarity_percent": 92.39
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 2.0787
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      }
+    },
+    "city-night": {
+      "regular": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 1.2708,
+          "rms_0_255": 6.9323,
+          "similarity_percent": 99.5017
+        },
+        "glass_crop": {
+          "mae_0_255": 14.226,
+          "rms_0_255": 22.4111,
+          "similarity_percent": 94.4212
+        },
+        "material_interior": {
+          "mae_0_255": 24.6406,
+          "rms_0_255": 26.3949,
+          "similarity_percent": 90.337
+        },
+        "control_bounds": {
+          "mae_0_255": 25.6155,
+          "rms_0_255": 30.2771,
+          "similarity_percent": 89.9547
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 1.0729
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "clear": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.7111,
+          "rms_0_255": 6.6338,
+          "similarity_percent": 99.7211
+        },
+        "glass_crop": {
+          "mae_0_255": 7.6735,
+          "rms_0_255": 21.3275,
+          "similarity_percent": 96.9908
+        },
+        "material_interior": {
+          "mae_0_255": 7.8036,
+          "rms_0_255": 11.3621,
+          "similarity_percent": 96.9398
+        },
+        "control_bounds": {
+          "mae_0_255": 13.6442,
+          "rms_0_255": 28.8126,
+          "similarity_percent": 94.6493
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 2.9399
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "regular-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.8544,
+          "rms_0_255": 6.2904,
+          "similarity_percent": 99.665
+        },
+        "glass_crop": {
+          "mae_0_255": 9.3511,
+          "rms_0_255": 20.0723,
+          "similarity_percent": 96.3329
+        },
+        "material_interior": {
+          "mae_0_255": 15.6157,
+          "rms_0_255": 18.7051,
+          "similarity_percent": 93.8762
+        },
+        "control_bounds": {
+          "mae_0_255": 16.4019,
+          "rms_0_255": 26.2579,
+          "similarity_percent": 93.5679
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 2.0488
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "clear-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 1.1046,
+          "rms_0_255": 7.5384,
+          "similarity_percent": 99.5668
+        },
+        "glass_crop": {
+          "mae_0_255": 12.2808,
+          "rms_0_255": 24.5957,
+          "similarity_percent": 95.184
+        },
+        "material_interior": {
+          "mae_0_255": 21.1777,
+          "rms_0_255": 26.7982,
+          "similarity_percent": 91.695
+        },
+        "control_bounds": {
+          "mae_0_255": 21.7435,
+          "rms_0_255": 32.5308,
+          "similarity_percent": 91.4731
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 2.1134
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      }
+    },
+    "prism": {
+      "regular": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 1.0868,
+          "rms_0_255": 5.9197,
+          "similarity_percent": 99.5738
+        },
+        "glass_crop": {
+          "mae_0_255": 12.3865,
+          "rms_0_255": 19.9161,
+          "similarity_percent": 95.1426
+        },
+        "material_interior": {
+          "mae_0_255": 18.5361,
+          "rms_0_255": 21.8187,
+          "similarity_percent": 92.7309
+        },
+        "control_bounds": {
+          "mae_0_255": 20.9461,
+          "rms_0_255": 26.7493,
+          "similarity_percent": 91.7858
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 1.5183
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "clear": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.6599,
+          "rms_0_255": 5.7182,
+          "similarity_percent": 99.7412
+        },
+        "glass_crop": {
+          "mae_0_255": 7.3886,
+          "rms_0_255": 19.2145,
+          "similarity_percent": 97.1025
+        },
+        "material_interior": {
+          "mae_0_255": 4.0008,
+          "rms_0_255": 6.3958,
+          "similarity_percent": 98.4311
+        },
+        "control_bounds": {
+          "mae_0_255": 11.6622,
+          "rms_0_255": 25.7394,
+          "similarity_percent": 95.4266
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 3.1994
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "regular-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.7703,
+          "rms_0_255": 5.3826,
+          "similarity_percent": 99.6979
+        },
+        "glass_crop": {
+          "mae_0_255": 8.6814,
+          "rms_0_255": 18.044,
+          "similarity_percent": 96.5955
+        },
+        "material_interior": {
+          "mae_0_255": 12.4177,
+          "rms_0_255": 15.6303,
+          "similarity_percent": 95.1303
+        },
+        "control_bounds": {
+          "mae_0_255": 13.8613,
+          "rms_0_255": 23.3256,
+          "similarity_percent": 94.5642
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 2.0216
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "clear-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 1.0116,
+          "rms_0_255": 6.5106,
+          "similarity_percent": 99.6033
+        },
+        "glass_crop": {
+          "mae_0_255": 11.506,
+          "rms_0_255": 21.9692,
+          "similarity_percent": 95.4878
+        },
+        "material_interior": {
+          "mae_0_255": 17.1669,
+          "rms_0_255": 22.2317,
+          "similarity_percent": 93.2679
+        },
+        "control_bounds": {
+          "mae_0_255": 18.8581,
+          "rms_0_255": 28.7807,
+          "similarity_percent": 92.6047
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 2.1369
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      }
+    },
+    "facade": {
+      "regular": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.8282,
+          "rms_0_255": 4.8804,
+          "similarity_percent": 99.6752
+        },
+        "glass_crop": {
+          "mae_0_255": 9.1382,
+          "rms_0_255": 15.5048,
+          "similarity_percent": 96.4164
+        },
+        "material_interior": {
+          "mae_0_255": 16.8765,
+          "rms_0_255": 19.2088,
+          "similarity_percent": 93.3818
+        },
+        "control_bounds": {
+          "mae_0_255": 14.9239,
+          "rms_0_255": 20.7289,
+          "similarity_percent": 94.1475
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 0.7046
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "clear": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 1.0265,
+          "rms_0_255": 7.4676,
+          "similarity_percent": 99.5974
+        },
+        "glass_crop": {
+          "mae_0_255": 11.4606,
+          "rms_0_255": 24.7874,
+          "similarity_percent": 95.5057
+        },
+        "material_interior": {
+          "mae_0_255": 12.4804,
+          "rms_0_255": 17.2899,
+          "similarity_percent": 95.1057
+        },
+        "control_bounds": {
+          "mae_0_255": 19.0728,
+          "rms_0_255": 33.3418,
+          "similarity_percent": 92.5205
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 3.6369
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "regular-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.6633,
+          "rms_0_255": 5.2428,
+          "similarity_percent": 99.7399
+        },
+        "glass_crop": {
+          "mae_0_255": 7.2075,
+          "rms_0_255": 16.8331,
+          "similarity_percent": 97.1735
+        },
+        "material_interior": {
+          "mae_0_255": 10.9569,
+          "rms_0_255": 14.2257,
+          "similarity_percent": 95.7032
+        },
+        "control_bounds": {
+          "mae_0_255": 11.0297,
+          "rms_0_255": 21.3387,
+          "similarity_percent": 95.6746
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 2.0345
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      },
+      "clear-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "whole_window": {
+          "mae_0_255": 0.9099,
+          "rms_0_255": 6.2415,
+          "similarity_percent": 99.6432
+        },
+        "glass_crop": {
+          "mae_0_255": 10.0947,
+          "rms_0_255": 20.4358,
+          "similarity_percent": 96.0413
+        },
+        "material_interior": {
+          "mae_0_255": 16.3819,
+          "rms_0_255": 21.7975,
+          "similarity_percent": 93.5757
+        },
+        "control_bounds": {
+          "mae_0_255": 16.2054,
+          "rms_0_255": 26.4829,
+          "similarity_percent": 93.6449
+        },
+        "glass_artifacts": {
+          "pixels_over_64_percent": 2.1244
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ],
+        "material_interior_pixels": [
+          1180,
+          1224,
+          1460,
+          1376
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[package]
+name = "gpui-liquid-glass"
+version = "0.1.0"
+edition = "2021"
+description = "Reusable Liquid Glass material and application example for GPUI"
+license = "MIT"
+repository = "https://github.com/1234igor/gpui-liquid-glass"
+publish = false
+
+[dependencies]
+gpui = { path = "../vendor/gpui", features = ["runtime_shaders"] }
+image = "0.25"
+
+[[example]]
+name = "window_glass"
+path = "examples/window_glass.rs"
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3

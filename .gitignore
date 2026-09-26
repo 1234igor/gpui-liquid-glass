@@ -1,0 +1,13 @@
+/target/
+/gpui/target/
+/validation/reference-swiftui/.build/
+/validation/reference-swiftui/.swiftpm/
+/validation/window-glass-reference/WindowGlassReference
+/validation/captures/*
+!/validation/captures/glass-comparison.png
+!/validation/captures/variants-comparison.png
+!/validation/captures/variant-metrics.json
+!/validation/captures/background-matrix.png
+!/validation/captures/background-metrics.json
+.DS_Store
+__pycache__/

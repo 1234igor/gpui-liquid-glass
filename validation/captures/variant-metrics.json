@@ -1,0 +1,193 @@
+{
+  "background": "harbour",
+  "variants": {
+    "regular": {
+      "capture_size": [
+        2400,
+        1600
+      ],
+      "whole_window": {
+        "mae_0_255": 1.0475,
+        "rms_0_255": 5.5967,
+        "similarity_percent": 99.5892
+      },
+      "glass_crop": {
+        "mae_0_255": 11.9192,
+        "rms_0_255": 18.7659,
+        "similarity_percent": 95.3258
+      },
+      "material_interior": {
+        "mae_0_255": 24.0037,
+        "rms_0_255": 25.5992,
+        "similarity_percent": 90.5868
+      },
+      "control_bounds": {
+        "mae_0_255": 19.479,
+        "rms_0_255": 25.074,
+        "similarity_percent": 92.3612
+      },
+      "glass_artifacts": {
+        "pixels_over_64_percent": 0.7646
+      },
+      "glass_crop_pixels": [
+        700,
+        1132,
+        1700,
+        1460
+      ],
+      "control_bounds_pixels": [
+        760,
+        1204,
+        1640,
+        1408
+      ],
+      "material_interior_pixels": [
+        1180,
+        1224,
+        1460,
+        1376
+      ]
+    },
+    "clear": {
+      "capture_size": [
+        2400,
+        1600
+      ],
+      "whole_window": {
+        "mae_0_255": 0.9438,
+        "rms_0_255": 7.1881,
+        "similarity_percent": 99.6299
+      },
+      "glass_crop": {
+        "mae_0_255": 10.7049,
+        "rms_0_255": 24.297,
+        "similarity_percent": 95.802
+      },
+      "material_interior": {
+        "mae_0_255": 9.3102,
+        "rms_0_255": 17.2833,
+        "similarity_percent": 96.3489
+      },
+      "control_bounds": {
+        "mae_0_255": 17.0805,
+        "rms_0_255": 32.5647,
+        "similarity_percent": 93.3018
+      },
+      "glass_artifacts": {
+        "pixels_over_64_percent": 4.0317
+      },
+      "glass_crop_pixels": [
+        700,
+        1132,
+        1700,
+        1460
+      ],
+      "control_bounds_pixels": [
+        760,
+        1204,
+        1640,
+        1408
+      ],
+      "material_interior_pixels": [
+        1180,
+        1224,
+        1460,
+        1376
+      ]
+    },
+    "regular-tinted": {
+      "capture_size": [
+        2400,
+        1600
+      ],
+      "whole_window": {
+        "mae_0_255": 0.8055,
+        "rms_0_255": 5.4208,
+        "similarity_percent": 99.6841
+      },
+      "glass_crop": {
+        "mae_0_255": 9.0863,
+        "rms_0_255": 18.1512,
+        "similarity_percent": 96.4367
+      },
+      "material_interior": {
+        "mae_0_255": 15.9387,
+        "rms_0_255": 19.0415,
+        "similarity_percent": 93.7495
+      },
+      "control_bounds": {
+        "mae_0_255": 13.9683,
+        "rms_0_255": 23.1532,
+        "similarity_percent": 94.5222
+      },
+      "glass_artifacts": {
+        "pixels_over_64_percent": 1.9872
+      },
+      "glass_crop_pixels": [
+        700,
+        1132,
+        1700,
+        1460
+      ],
+      "control_bounds_pixels": [
+        760,
+        1204,
+        1640,
+        1408
+      ],
+      "material_interior_pixels": [
+        1180,
+        1224,
+        1460,
+        1376
+      ]
+    },
+    "clear-tinted": {
+      "capture_size": [
+        2400,
+        1600
+      ],
+      "whole_window": {
+        "mae_0_255": 1.0684,
+        "rms_0_255": 6.6526,
+        "similarity_percent": 99.581
+      },
+      "glass_crop": {
+        "mae_0_255": 12.1638,
+        "rms_0_255": 22.4405,
+        "similarity_percent": 95.2299
+      },
+      "material_interior": {
+        "mae_0_255": 21.879,
+        "rms_0_255": 27.3771,
+        "similarity_percent": 91.42
+      },
+      "control_bounds": {
+        "mae_0_255": 19.4055,
+        "rms_0_255": 29.1982,
+        "similarity_percent": 92.39
+      },
+      "glass_artifacts": {
+        "pixels_over_64_percent": 2.0787
+      },
+      "glass_crop_pixels": [
+        700,
+        1132,
+        1700,
+        1460
+      ],
+      "control_bounds_pixels": [
+        760,
+        1204,
+        1640,
+        1408
+      ],
+      "material_interior_pixels": [
+        1180,
+        1224,
+        1460,
+        1376
+      ]
+    }
+  }
+}
