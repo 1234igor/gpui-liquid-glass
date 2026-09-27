@@ -1,33 +1,38 @@
 # Contexts
 
-GPUI makes extensive use of _context parameters_ (typically named `cx`) to provide access to application state and services. These contexts are references passed to functions, enabling interaction with global state, windows, entities, and system services.
+Modified in this fork: shortened the descriptions and corrected API wording.
 
----
+A context parameter, usually named `cx`, gives a function access to application
+state and services. The available operations depend on the context type.
 
 ## `App`
 
-The root context granting access to the application's global state. This context owns all entities' data and can be used to read or update the data referenced by an `Entity<T>`.
+`App` owns entity data and global application state. Use it to read or update
+the data held by an `Entity<T>`.
 
 ## `Context<T>`
 
-A context provided when interacting with an `Entity<T>`, with additional methods related to that specific entity such as notifying observers and emitting events. This context dereferences into `App`, meaning any function which can take an `App` reference can also take a `Context<T>` reference, allowing you to access the application's global state.
+`Context<T>` updates a particular entity, notifies its observers, and emits
+its events. It dereferences to `App`, so it also provides application services.
 
 ## `AsyncApp` and `AsyncWindowContext`
 
-Whereas the above contexts are always passed to your code as references, you can call `to_async` on the reference to create an async context, which has a static lifetime and can be held across `await` points in async code. When you interact with entities with an async context, the calls become fallible, because the context may outlive the window or even the app itself.
+Use `to_async` to create a context that can be held across `await` points.
+Entity and window access can fail if their targets have been dropped.
 
 ## `TestAppContext`
 
-These are similar to the async contexts above, but they panic if you attempt to access a non-existent app or window, and they also contain other features specific to tests.
-
----
-
-# Non-Context Core Types
+This context provides test helpers, including simulated input. Accessing a
+missing entity or window panics so the test reports a failure.
 
 ## `Window`
 
-Provides access to the state of an application window. This type has a root view (an `Entity` implementing `Render`) which it can read/update, but since it is not a context, you must pass a `&mut App` (or a context which dereferences to it) to do so, along with other functions interacting with global state. You can obtain a `Window` from an `WindowHandle` by calling `WindowHandle::update`.
+`Window` provides window state, layout, and drawing operations. It has a root
+entity that implements `Render`. Use `WindowHandle::update` to access a window
+from its handle.
 
 ## `Entity<T>`
 
-A handle to a structure requiring state. This data is owned by the `App` and can be accessed and modified via references to contexts. If `T` implements `Render`, then the entity is sometimes referred to as a view. Entities can be observed by other entities and windows, allowing a closure to be called when `notify` is called on the entity's `Context`.
+`Entity<T>` is a handle to state owned by the app. Read or update it through a
+context. An entity that implements `Render` is a view; calling `cx.notify()`
+notifies observers of a change.

@@ -10,13 +10,15 @@ of the file saying that it was changed.
 
 ## What the fork adds
 
-A live Liquid Glass material, as a first-class scene primitive rather than a
-post-processing pass. Content behind the surface is read from the render target
-in the same frame it is drawn, so anything moving underneath refracts correctly.
+A Liquid Glass scene primitive reads the current render target for refraction
+and blur. On macOS 26+, `NSGlassEffectView` can provide the window background
+around the Metal content view.
 
-On macOS 26 and later the window background can instead be handed to the system
-`NSGlassEffectView`, which makes GPUI's existing Metal view the glass content
-view — no framebuffer copy, no CPU readback, no second render pass.
+## Documentation changes
+
+`README.md` documents setup for this vendored copy. `docs/contexts.md` has
+shorter descriptions and corrected API wording. `docs/key_dispatch.md` corrects
+action declarations, handler signatures, and JSON examples.
 
 ## Changed files
 

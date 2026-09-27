@@ -1,28 +1,25 @@
 # Background test assets
 
-Four 2400 × 1600 backgrounds. Each one exercises a different way a glass
-material can fail, so a change that looks fine over one of them still has three
-more to survive.
+Four 2400 × 1600 backgrounds test glass over bright scenes, dark scenes,
+saturated colors, and fine lines.
 
 | File | What it stresses |
 |------|------------------|
 | `harbour.png` | Bright daylight, fine rigging lines, readable signage, water reflections |
-| `city-night.png` | Near-black media, point highlights, wet reflective surfaces |
-| `prism.png` | Saturated wide-gamut colour with sharp intersections |
-| `facade.png` | Neutral fine lines, grilles and stairs at hard contrast |
+| `city-night.png` | Dark areas, point highlights, and wet reflective surfaces |
+| `prism.png` | Saturated colors with sharp intersections |
+| `facade.png` | Fine lines, grilles, stairs, and strong contrast |
 
 ## Provenance and licence
 
 `harbour.png` is a crop of [*Hyde Street Pier, San Francisco*][hyde] by Bernard
-Spragg, released under [CC0 1.0][cc0] (public domain dedication). No attribution
-is required; it is credited here because it is good manners.
+Spragg, released under [CC0 1.0][cc0] (public domain dedication). The image is cropped and resized for the examples.
 
 [hyde]: https://commons.wikimedia.org/wiki/File:Hyde_Street_Pier._San_Francisco._(37699770496).jpg
 [cc0]: https://creativecommons.org/publicdomain/zero/1.0/
 
-The other three were generated with OpenAI's image model and are covered by this
-repository's MIT licence along with everything else here. The prompts are kept
-so they can be regenerated or extended.
+The other three images were generated with OpenAI's image model. The project
+licenses its rights in these images under MIT. The original prompts are below.
 
 <details>
 <summary>Generation prompts</summary>

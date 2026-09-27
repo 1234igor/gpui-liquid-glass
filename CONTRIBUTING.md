@@ -1,29 +1,25 @@
 # Contributing
 
-This is a small personal project, kept public because it is more useful that
-way. Issues and pull requests are welcome; slow replies are likely.
+Bug reports, documentation corrections, and pull requests are welcome. For a bug,
+include steps to reproduce it, the expected result, and your operating system
+and renderer versions. Include a screenshot for a rendering problem.
 
-## Before opening a pull request
+Discuss new dependencies, API changes, and major features in an issue before
+starting work.
+
+## Checks
+
+For code changes, run from the repository root:
 
 ```sh
-cd gpui && cargo build --release
+cd gpui
+cargo build --release
 cargo test --release
 ```
 
-## What gets merged easily
+See [validation](validation/README.md) for dependencies and capture commands.
+Check rendering changes over each background and material, including Identity.
+For documentation changes, check links and compare instructions with the source.
 
-- A bug with a reproduction, and the smallest change that fixes it.
-- A fix to something the docs get wrong. The docs are meant to be accurate
-  about what is measured and what is merely believed, so a correction there is
-  as valuable as a code change.
-
-## What to raise first
-
-Anything that changes the shape of the public API, adds a dependency, or
-enlarges the scope. Open an issue before writing the code — it is no fun to
-write a patch that gets turned down on direction.
-
-## Style
-
-Match the code around your change: same naming, same comment density. Comments
-here explain why a thing is the way it is, not what the line does.
+Keep patches focused and follow the surrounding code style. Describe the change
+and the checks you ran in the pull request.

@@ -25,7 +25,7 @@ gpui = { git = "https://github.com/1234igor/gpui-liquid-glass", rev = "<commit>"
 gpui-liquid-glass = { git = "https://github.com/1234igor/gpui-liquid-glass", rev = "<commit>" }
 ```
 
-`gpui-liquid-glass` supplies the material variants, CPU oracle, and examples.
+`gpui-liquid-glass` supplies the material variants, CPU renderer, and examples.
 The patched `gpui` supplies the native full-window API and live Metal scene
 primitive. An application that only needs full-window glass may omit the
 `gpui-liquid-glass` dependency and use the `gpui` API directly.

@@ -5,6 +5,21 @@ and a ProMotion display. Results are animation-driven render-callback intervals,
 not GPU command times, so they can show a refresh-rate cliff but cannot resolve
 work that still fits inside the same display interval.
 
+## Run the component benchmarks
+
+From the repository root:
+
+```sh
+cd gpui
+cargo run --release -- regular rest harbour dynamic benchmark no-glass
+cargo run --release -- regular rest harbour dynamic benchmark
+cargo run --release -- regular rest harbour stress-24 benchmark no-glass
+cargo run --release -- regular rest harbour stress-24 benchmark
+```
+
+Run each case separately with the same display and power settings. The
+`no-glass` argument omits the material for the baseline run.
+
 ## Live dynamic scene
 
 The normal benchmark animates the backdrop continuously and records 480 frames
@@ -18,15 +33,13 @@ after a 60-frame warmup.
 | SwiftUI | Regular | 8.329 ms | 8.393 ms | 0 |
 
 The measured GPUI and SwiftUI penalties are both below one 120 Hz interval's
-resolution. That means negligible impact in this scene, not zero GPU cost.
+resolution. The callback measurements do not resolve the GPU cost of the effect.
 
 ## Advanced dynamic scene
 
 The advanced fixture places 2,400 moving 24 px tiles beneath 24 distinct,
 viewport-distributed glass surfaces. This paired run was collected after
-coalescing and before the later 33-to-17 tap reduction, so it is a conservative
-result for the current shader. ProMotion selected 60 Hz because the underlying
-scene was already expensive:
+coalescing and before the later 33-to-17 tap reduction. Both runs had median callback intervals near 16.7 ms:
 
 | GPUI advanced scene | Median | p95 | Frames over 12.5 ms |
 | --- | ---: | ---: | ---: |
@@ -40,9 +53,7 @@ timings.
 
 Before same-layer effect coalescing, 192 repeated overlapping surfaces dropped
 to a 16.694 ms median with 479 slow frames. After coalescing, the same case
-measured 8.330 ms median, 8.504 ms p95, and four slow frames. This is the main
-measured scaling win and prevents grouped controls from multiplying identical
-shader work.
+measured 8.330 ms median, 8.504 ms p95, and four slow frames. Coalescing submits identical overlapping surfaces once per paint layer.
 
 ## Native full-window glass
 
@@ -64,16 +75,9 @@ SwiftUI `Glass` across the full window; the GPUI window uses the public AppKit
 | SwiftUI Regular | 8.349 ms | 16.646 ms | 77 | n/a |
 | SwiftUI Clear | 8.340 ms | 15.282 ms | 40 | n/a |
 
-The GPUI-specific delta is below measurement resolution: Regular is 0.001 ms
-faster at the median and 0.058 ms slower at p95 than SwiftUI; Clear is 0.004 ms
-slower at the median. Relative to each framework's Identity window, Regular
-adds 0.010 ms in GPUI and 0.009 ms in SwiftUI. The 2 GPUI renders are initial
-window setup, not backdrop-driven redraws.
-
-The transparent overlay itself changes background-window scheduling, which is
-why Identity has more long intervals than the no-overlay run. Regular also
-causes the native compositor to use more 60 Hz-length intervals in both GPUI
-and SwiftUI. This is native material cost, not a GPUI render-loop regression.
+Regular's median interval differs by 0.001 ms between the two frameworks, and
+Clear's by 0.004 ms. Every GPUI overlay rendered twice during setup. The
+background scene had more long intervals with an overlay than without one.
 
 With 2,400 moving tiles underneath, paired GPUI runs stayed at 8.337-8.346 ms
 without an overlay, 8.346-8.350 ms with Identity, 8.353-8.391 ms with Regular,
@@ -116,21 +120,10 @@ performance.
 - [Applying Liquid Glass to custom views](https://developer.apple.com/documentation/SwiftUI/Applying-Liquid-Glass-to-custom-views)
 - [Adopting Liquid Glass](https://developer.apple.com/documentation/TechnologyOverviews/adopting-liquid-glass)
 
-## Fidelity guardrails
+## Visual comparisons
 
-The optimized live renderer is checked against the Xcode reference over
-bright harbour, dark city, saturated prism, and fine facade backgrounds. Across
-all four non-identity materials, the 16 enlarged glass crops measure 94.42% to
-97.17% similarity, and 99.50% to 99.74% over the whole window.
+[Validation](validation/README.md) contains the stored reference comparisons,
+error formulas, thresholds, and capture commands.
 
-Two of those sixteen no longer clear their gate: the material was calibrated
-against macOS 26 and macOS 27 moved it. The current numbers, the gates and the
-two failures are in [`validation/README.md`](validation/README.md).
-
-The Clear captures use the undimmed native `Glass.clear` material. The native
-reference is briefly made active in an offscreen window, while the GPUI capture
-runs in background mode so the validation does not take over the desktop.
-
-Two captures of the animated Gaussian material changed 91.85% of glass-interior
-pixels by more than two channel values, confirming that it tracks the live
-backdrop rather than reusing a stale image.
+In the recorded animation check, 91.85% of glass-interior pixels changed by more
+than two channel values between two captures.
