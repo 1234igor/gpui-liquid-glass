@@ -6,8 +6,6 @@ Glass materials for GPUI apps on macOS. Draw glass over your app's content, or u
 
 [Image credits and licenses](IMAGE-LICENSES.md): Bernard Spragg (CC0) and project-generated backgrounds (MIT).
 
-The image shows eight crops from the GPUI renderer. Each material appears on two backgrounds.
-
 ## Run
 
 Requires Rust and the Xcode command-line tools on macOS.
@@ -55,10 +53,8 @@ Native window glass requires macOS 26 or later. Earlier versions use system blur
 
 The painted material samples the current frame on the GPU. The native window path uses `NSGlassEffectView`. A separate CPU renderer is available for static images.
 
-## Results and limits
+## Development
 
-The painted material still fails two stored reference checks: Regular on the dark city, and Clear on the harbour. [Validation](validation/README.md) explains the measurements and how to repeat them. Its pixel-error scores do not mean that the same percentage of pixels match.
-
-See [performance results](PERFORMANCE.md) for benchmarks and [showcase generation](validation/README.md#readme-image) for the image script.
+[Rendering checks](validation/README.md) · [Benchmarks](PERFORMANCE.md) · [Screenshot script](validation/README.md#readme-image).
 
 [MIT license](LICENSE). The vendored GPUI fork is Apache-2.0; see [third-party notices](THIRD-PARTY.md).
