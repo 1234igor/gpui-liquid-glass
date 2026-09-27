@@ -1,116 +1,65 @@
 # Validation
 
-This directory holds the pixel reference for the material: a small SwiftUI
-application that calls Apple's public `.glassEffect`, colour-managed comparison
-scripts, four shared stress backgrounds, and the checked-in evidence the README
-points at.
+The painted GPUI material is compared with native SwiftUI glass on four backgrounds. Native full-window glass has a separate reference app.
 
-The point is that the similarity claims are measurements anyone can repeat, not
-assertions.
+## Painted material
 
-## What is measured
-
-Four materials × four backgrounds = 16 pairs, captured at 2400 × 1600 and
-compared in sRGB. Identity is the no-effect sentinel and is not compared against
-a native counterpart. Each pair is scored four ways, and every score is a
-**gate**, not a report:
+The stored macOS 27 run contains 16 pairs at 2400 × 1600. The original tool compares decoded RGB channels without converting embedded display profiles. Treat these as historical error scores. Each pair has these thresholds:
 
 | Check | Threshold |
-|-------|-----------|
-| Whole-window similarity | ≥ 99.5 % |
-| Glass-crop similarity | ≥ 95.0 % |
-| Control-bounds similarity | ≥ 91.0 % |
-| Glass crop, pixels with severe local channel error | ≤ 3.75 % |
+| --- | ---: |
+| Full-window score | ≥ 99.5 |
+| Glass-crop score | ≥ 95.0 |
+| Control-bounds score | ≥ 91.0 |
+| Glass-crop pixels with severe channel error | ≤ 3.75% |
 
-The thresholds live at the top of `scripts/compare.py`.
+The score is `100 × (1 − mean absolute RGB error / 255)`. It is not the percentage of matching pixels. Whole-window scores also include the unchanged background. Use the close-ups to judge visible differences.
 
-## Current results
+Two stored cases fail:
 
-Measured on macOS 27:
+| Case | Result |
+| --- | --- |
+| Dark city / Regular | 94.42 glass-crop score |
+| Harbour / Clear | 4.03% severe error |
 
-| Metric | Range |
-|--------|-------|
-| Glass crop | 94.42 – 97.17 % |
-| Whole window | 99.50 – 99.74 % |
-| Severe local error | 0.70 – 4.03 % |
+The thresholds remain unchanged. See the [material comparison](captures/variants-comparison.png), [background matrix](captures/background-matrix.png), and [metrics](captures/background-metrics.json).
 
-Evidence: [`captures/background-matrix.png`](captures/background-matrix.png),
-[`captures/glass-comparison.png`](captures/glass-comparison.png),
-[`captures/variants-comparison.png`](captures/variants-comparison.png), and the
-two metrics files beside them.
+## Capture the matrix
 
-### Known failures
-
-Two of the sixteen pairs miss a gate:
-
-```
-city-night / regular   glass crop  94.42% < 95.00%
-harbour    / clear     severe       4.03% >  3.75%
-```
-
-The material was calibrated against macOS 26 and macOS 27 moved it slightly.
-The gates have deliberately **not** been loosened to make the run green — a gate
-that moves whenever it fails measures nothing. Pass
-`ALLOW_FIDELITY_REGRESSION=1` to record the numbers and keep going instead of
-stopping at the first miss; that is how the checked-in evidence above was
-regenerated.
-
-## Running it
+From the repository root:
 
 ```sh
 ACTIVE_OFFSCREEN_CAPTURE=1 validation/scripts/capture-background-matrix.sh
-validation/scripts/compose-evidence.py           # glass-comparison, variants-comparison
-validation/scripts/compose-background-evidence.py # the four-background matrix
+python3 validation/scripts/compose-evidence.py
+python3 validation/scripts/compose-background-evidence.py
 ```
 
-The runner builds the native reference with whatever `xcode-select -p` points
-at (override with `DEVELOPER_DIR=...`), bundles the GPUI app, verifies the
-background assets are byte-identical on both sides, serializes every GUI launch,
-requires the exact material and background in each window title, and kills only
-the child PIDs it started. It refuses to run while either app is already open.
+This builds both apps and captures them in sequence. It requires macOS, Xcode, and Screen Recording permission. Set `DEVELOPER_DIR` to choose Xcode. Close existing reference or GPUI demo windows first.
 
-macOS renders Liquid Glass differently when its window is **inactive**, so the
-default automated launch — which activates nothing — is not what the checked
-evidence was made with. `ACTIVE_OFFSCREEN_CAPTURE=1` briefly activates the
-native reference beyond the visible desktop, keeps GPUI in `background-run`, and
-restores the previously frontmost app after every capture. `FOREGROUND_CAPTURE=1`
-exists for interactive diagnosis.
+macOS changes glass when its window is inactive. `ACTIVE_OFFSCREEN_CAPTURE=1` briefly activates the native reference offscreen and then restores focus. GPUI stays in the background.
 
-App arguments are `regular`, `clear`, `regular-tinted`, `clear-tinted` or
-`identity`, optionally followed by `rest`, `hover` or `pressed`, and one of
-`harbour`, `city-night`, `prism` or `facade`.
+The capture stops on a failed check. To collect all images despite the known failures, add `ALLOW_FIDELITY_REGRESSION=1`. This records failing results; it does not make them pass.
 
-## Full-window validation
+## README image
 
-`window-glass-reference/` is a small reference for both direct AppKit
-`NSGlassEffectView` and full-window SwiftUI `Glass`:
+With Pillow 10.1 or later installed, run this after collecting the matrix:
+
+```sh
+python3 validation/scripts/compose-showcase.py
+```
+
+The script takes eight GPUI crops: four materials on the harbour and facade backgrounds. It checks dimensions, converts embedded color profiles to sRGB, crops, resizes, and adds labels. It does not alter the glass. The source images live in `captures/raw/backgrounds/`, which is generated and not checked in.
+
+## Native full-window glass
+
+Build the native reference and run the GPUI example:
 
 ```sh
 validation/window-glass-reference/build.sh
-cargo run --release --example window_glass -- clear     # the GPUI equivalent
+cd gpui
+cargo run --release --example window_glass -- clear
 ```
 
-Add `benchmark` to either to make it exit after six seconds; GPUI also prints
-its render count.
+Add `benchmark` to either app to make it exit after six seconds. GPUI also reports its render count.
 
-**Do not** validate a translucent full window with `screencapture -l`. A
-window-only capture isolates the window from the compositor and flattens its
-transparent material to grey. Capture the on-screen rectangle instead, after
-querying the owned window position:
-
-```sh
-screencapture -x -R296,181,920,620 output.png
-```
-
-That composited method is what confirmed live sampling on all four backgrounds,
-and a single native corner contour for every variant.
-
-## Layout
-
-| Path | What it is |
-|------|-----------|
-| `reference-swiftui/` | The SwiftUI application the GPUI output is compared against |
-| `window-glass-reference/` | AppKit and SwiftUI references for the full-window path |
-| `shared/` | The four stress backgrounds, and where they came from |
-| `scripts/` | Capture, comparison and evidence composition |
-| `captures/` | Checked-in evidence; `captures/raw/` is generated and ignored |
+Capture the composited screen rectangle for this path. A window-only capture (`screencapture -l`) removes the background and makes transparent glass look grey. Query the window's actual position before using `screencapture -R`.

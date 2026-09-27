@@ -1,3 +1,4 @@
+// Modified for this fork: use images with documented reuse rights.
 use std::{fs, path::PathBuf};
 
 use anyhow::Result;
@@ -149,7 +150,7 @@ impl Render for HelloWorld {
                                             .hover(|style| style.opacity(0.5))
                                     })),
                             )
-                            .child(img("image/black-cat-typing.gif").size_12()),
+                            .child(img("image/harbour-pan.gif").size_12()),
                     ),
             )
     }

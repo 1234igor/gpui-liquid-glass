@@ -34,8 +34,13 @@ view — no framebuffer copy, no CPU readback, no second render pass.
 | `src/platform/windows/window.rs` | Treats the new background appearance as transparent |
 | `src/taffy.rs` | Explicit `f32` literals, to build on current Rust |
 
-Nothing else in this directory differs from the published crate. To confirm
-that, fetch the original and diff it:
+## Example image cleanup
+
+The image, image-gallery, GIF-viewer, and opacity examples now use Bernard Spragg's CC0 harbour photograph. `examples/image/app-icon.png` is a copy of that photo; `harbour-pan.gif` and its generator replace the uncredited cat GIF. Remote image URLs use the same credited source instead of random photographs.
+
+`examples/svg/dragon.svg` has an attribution comment; its artwork is unchanged. `LICENSE-LUCIDE` preserves the license notices for the Lucide-derived SVG fixture. See the repository's `IMAGE-LICENSES.md` for authors and reuse terms.
+
+To compare this fork with the published crate:
 
 ```sh
 curl -L -o gpui-0.2.2.crate https://crates.io/api/v1/crates/gpui/0.2.2/download

@@ -1,3 +1,4 @@
+// Modified for this fork: use images with documented reuse rights.
 use gpui::{App, Application, Context, Render, Window, WindowOptions, div, img, prelude::*};
 use std::path::PathBuf;
 
@@ -26,7 +27,7 @@ fn main() {
     env_logger::init();
     Application::new().run(|cx: &mut App| {
         let gif_path =
-            PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("examples/image/black-cat-typing.gif");
+            PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("examples/image/harbour-pan.gif");
 
         cx.open_window(
             WindowOptions {

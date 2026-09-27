@@ -1,3 +1,4 @@
+// Modified for this fork: use images with documented reuse rights.
 use futures::FutureExt;
 use gpui::{
     App, AppContext, Application, Asset as _, AssetLogger, Bounds, ClickEvent, Context, ElementId,
@@ -36,7 +37,7 @@ impl ImageGallery {
 impl Render for ImageGallery {
     fn render(&mut self, _window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
         let image_url: SharedString =
-            format!("https://picsum.photos/400/200?t={}", self.image_key).into();
+            format!("https://raw.githubusercontent.com/1234igor/gpui-liquid-glass/main/validation/shared/harbour.png?t={}", self.image_key).into();
 
         div()
             .flex()

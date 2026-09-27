@@ -1,3 +1,4 @@
+// Modified for this fork: use images with documented reuse rights.
 use std::fs;
 use std::path::PathBuf;
 use std::sync::Arc;
@@ -118,13 +119,13 @@ impl Render for ImageShowcase {
                                 div()
                                     .flex_col()
                                     .child("Auto Width")
-                                    .child(img("https://picsum.photos/800/400").h(px(180.))),
+                                    .child(img("https://raw.githubusercontent.com/1234igor/gpui-liquid-glass/main/validation/shared/harbour.png").h(px(180.))),
                             )
                             .child(
                                 div()
                                     .flex_col()
                                     .child("Auto Height")
-                                    .child(img("https://picsum.photos/800/400").w(px(180.))),
+                                    .child(img("https://raw.githubusercontent.com/1234igor/gpui-liquid-glass/main/validation/shared/harbour.png").w(px(180.))),
                             ),
                     )
                     .child(
@@ -137,7 +138,7 @@ impl Render for ImageShowcase {
                             .border_1()
                             .border_color(rgb(0xC0C0C0))
                             .child("image with max width 100%")
-                            .child(img("https://picsum.photos/800/400").max_w_full()),
+                            .child(img("https://raw.githubusercontent.com/1234igor/gpui-liquid-glass/main/validation/shared/harbour.png").max_w_full()),
                     ),
             )
     }
@@ -185,7 +186,7 @@ fn main() {
                 cx.new(|_| ImageShowcase {
                     // Relative path to your root project path
                     local_resource: manifest_dir.join("examples/image/app-icon.png").into(),
-                    remote_resource: "https://picsum.photos/800/400".into(),
+                    remote_resource: "https://raw.githubusercontent.com/1234igor/gpui-liquid-glass/main/validation/shared/harbour.png".into(),
                     asset_resource: "image/color.svg".into(),
                 })
             })
