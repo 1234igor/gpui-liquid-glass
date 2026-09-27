@@ -57,8 +57,8 @@ The painted material samples the current frame on the GPU. The native window pat
 
 ## Results and limits
 
-The painted material approximates Apple's glass. The stored macOS 27 comparisons still fail two checks: Regular on the dark city, and Clear on the harbour. [Validation](validation/README.md) explains the measurements and how to repeat them. Its pixel-error scores do not mean that the same percentage of pixels match.
+The painted material still fails two stored reference checks: Regular on the dark city, and Clear on the harbour. [Validation](validation/README.md) explains the measurements and how to repeat them. Its pixel-error scores do not mean that the same percentage of pixels match.
 
 See [performance results](PERFORMANCE.md) for benchmarks and [showcase generation](validation/README.md#readme-image) for the image script.
 
-[MIT license](LICENSE). The vendored GPUI fork is Apache-2.0; see [third-party notices](THIRD-PARTY.md). This project is independent of Apple.
+[MIT license](LICENSE). The vendored GPUI fork is Apache-2.0; see [third-party notices](THIRD-PARTY.md).
